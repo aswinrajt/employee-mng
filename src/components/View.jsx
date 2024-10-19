@@ -58,22 +58,29 @@ function View() {
 <>
 {
   data?.map(item=>(
-
-    <Card style={{ width: '18rem' }} className='text-center mx-4'>
-    <Card.Img variant="top" src="https://png.pngtree.com/png-vector/20220901/ourmid/pngtree-company-employee-avatar-icon-wearing-a-suit-png-image_6133899.png" />
+<Col xs={12} md={6} lg={4} className="d-flex justify-content-center my-3">
+  <Card style={{ width: '18rem' }} className="text-center">
+    <Card.Img 
+      variant="top" 
+      src="https://png.pngtree.com/png-vector/20220901/ourmid/pngtree-company-employee-avatar-icon-wearing-a-suit-png-image_6133899.png" 
+    />
     <Card.Body>
-      <Card.Title>{item.firstname}{item.lastname}</Card.Title>
-      <Card.Text><p>Age:{item.age}</p></Card.Text>
-
-          <p>{item.qualification}</p>
-          <p>{item.email}</p>
-
-     <div className='d-flex justify-content-between'>
-             <Edit data={item}/>
-          <Button variant="primary" onClick={()=>handleDelete(item._id)}>Delete <i className="fa-solid fa-trash" style={{color: "#ff7070",}} /></Button>
-     </div>
+      <Card.Title>{item.firstname} {item.lastname}</Card.Title>
+      <Card.Text>
+        <p>Age: {item.age}</p>
+        <p>Qualification: {item.qualification}</p>
+        <p>Email: {item.email}</p>
+      </Card.Text>
+      <div className="d-flex justify-content-between">
+        <Edit data={item} />
+        <Button variant="primary" onClick={() => handleDelete(item._id)}>
+          Delete <i className="fa-solid fa-trash" style={{ color: "#ff7070" }} />
+        </Button>
+      </div>
     </Card.Body>
   </Card>
+</Col>
+
 
 
 
